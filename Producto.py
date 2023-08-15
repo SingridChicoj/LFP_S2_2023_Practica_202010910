@@ -12,7 +12,7 @@ class Producto:
         self.ubicacion = ubicacion
         self.total = 0
 
-nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\Practica1\lista.inv"
+nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\lista.inv"
 with open(nombre_archivo, "r") as archivo:
     lector = csv.reader(archivo, delimiter=";")
     #Creando la lista
@@ -35,7 +35,7 @@ with open(nombre_archivo, "r") as archivo:
 
 
 def instrucciones():
-    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\Practica1\Instrucciones.mov"
+    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\Instrucciones.mov"
     with open(nombre_archivo, "r") as archivo:
         lector = csv.reader(archivo, delimiter = ";")
         for lista in lector:
