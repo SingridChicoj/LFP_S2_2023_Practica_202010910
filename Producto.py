@@ -67,10 +67,10 @@ def instrucciones():
                 if c.nombre != producto or c.ubicacion != ubicacion:
                     print("Error, no existe el producto en esa ubicacion", ubicacion)
                 
-                if not existeC:
+                '''if not existeC:
                     print("Error, producto insuficiente ", cantidad)
                 if not existeU:
-                    print("Error, no existe el producto en esa ubicacin ", ubicacion)
+                    print("Error, no existe el producto en esa ubicacin ", ubicacion)'''
 
     for c in lista_producto:
         print(f"Nombre: {c.nombre}  Cantidad: {c.cantidad}  Ubicacion: {c.ubicacion}")   
