@@ -1,6 +1,3 @@
-
-
-#Librerias
 import csv
 
 class Producto:
@@ -11,7 +8,7 @@ class Producto:
         self.ubicacion = ubicacion
         self.total = 0
 
-nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\lista.inv"
+nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\Practica1\lista.inv"
 with open(nombre_archivo, "r") as archivo:
     lector = csv.reader(archivo, delimiter=";")
     #Creando la lista
@@ -32,51 +29,42 @@ with open(nombre_archivo, "r") as archivo:
     #print(c.nombre)
     #print(c.precio)
 
-
 def instrucciones():
-    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\Instrucciones.mov"
+    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\Practica1\Instrucciones.mov"
     with open(nombre_archivo, "r") as archivo:
         lector = csv.reader(archivo, delimiter = ";")
         for lista in lector:
-            name = lista[0]
+            nombre = lista[0]
             cantidad = int(lista[1])
             ubicacion = lista[2]
-            if "agregar_stock" in name:
-                producto = name.replace("agregar_stock ", "")
+            if "agregar_stock" in nombre:
+                productoa = nombre.replace("agregar_stock ", "")
+                existe = False
                 for c in lista_producto:
-                    if c.ubicacion == ubicacion and c.nombre == producto:
+                    if c.nombre == productoa and c.ubicacion == ubicacion:
                         c.cantidad += cantidad
-                        print("sumado")
-                if c.nombre != producto and c.ubicacion != ubicacion:
-                    print("Error, no existe el producto en esa ubicacion", ubicacion)
-                    
+                        print("sumado", productoa, ubicacion)
+                        existe = True
+                if not existe:
+                    print("Error, no existe el producto en esa ubicacion", productoa, ubicacion)
+
+
             elif "vender_producto" in nombre:
-                producto = nombre.replace("vender_producto ", "")
-                existeC = False
+                productov = nombre.replace("vender_producto ", "")
                 existeU = False
                 for c in lista_producto:
-                    if c.ubicacion == ubicacion:
-                        if cantidad >= c.cantidad:
+                    if c.ubicacion == ubicacion and c.nombre == productov:
+                        existeU = True
+                        if cantidad <= c.cantidad:
                             c.cantidad -= cantidad
-                            print("restado")
-                            existeC = True
+                            
+                            print("restado", productov, ubicacion)
                         else:
                             print("Error, producto insuficiente")
-                if c.nombre != producto or c.ubicacion != ubicacion:
-                    print("Error, no existe el producto en esa ubicacion", ubicacion)
-                
-                if not existeC:
-                    print("Error, producto insuficiente ", cantidad)
                 if not existeU:
-                    print("Error, no existe el producto en esa ubicacin ", ubicacion)
+                    print("Error, no existe el producto en esa ubicacion", productov, ubicacion)
 
     for c in lista_producto:
         print(f"Nombre: {c.nombre}  Cantidad: {c.cantidad}  Ubicacion: {c.ubicacion}")   
 
-
 instrucciones()
-
-
-
-
-
