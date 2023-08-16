@@ -8,3 +8,4 @@ vender_producto Peras;5;BodegaB
 agregar_stock Uvas;20;BodegaC
 agregar_stock Uvas;50;BodegaD
 vender_producto Uvas;30;BodegaC
+vender_producto Peras;35;BodegaB

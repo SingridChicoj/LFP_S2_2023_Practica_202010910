@@ -43,7 +43,8 @@ def instrucciones():
                 for c in lista_producto:
                     if c.nombre == productoa and c.ubicacion == ubicacion:
                         c.cantidad += cantidad
-                        print("sumado", productoa, ubicacion)
+                        c.total = c.precio * c.cantidad
+                        print("sumado", productoa, ubicacion, c.precio, c.total)
                         existe = True
                 if not existe:
                     print("Error, no existe el producto en esa ubicacion", productoa, ubicacion)
@@ -57,8 +58,8 @@ def instrucciones():
                         existeU = True
                         if cantidad <= c.cantidad:
                             c.cantidad -= cantidad
-                            
-                            print("restado", productov, ubicacion)
+                            c.total = c.precio * c.cantidad
+                            print("restado", productov, ubicacion, c.precio, c.total)
                         else:
                             print("Error, producto insuficiente")
                 if not existeU:
