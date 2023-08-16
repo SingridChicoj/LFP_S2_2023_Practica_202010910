@@ -1,5 +1,4 @@
-#Importaciones
-from nodo import nodo
+
 
 #Librerias
 import csv
@@ -39,11 +38,11 @@ def instrucciones():
     with open(nombre_archivo, "r") as archivo:
         lector = csv.reader(archivo, delimiter = ";")
         for lista in lector:
-            nombre = lista[0]
+            name = lista[0]
             cantidad = int(lista[1])
             ubicacion = lista[2]
-            if "agregar_stock" in nombre:
-                producto = nombre.replace("agregar_stock ", "")
+            if "agregar_stock" in name:
+                producto = name.replace("agregar_stock ", "")
                 for c in lista_producto:
                     if c.ubicacion == ubicacion and c.nombre == producto:
                         c.cantidad += cantidad
@@ -51,7 +50,6 @@ def instrucciones():
                 if c.nombre != producto and c.ubicacion != ubicacion:
                     print("Error, no existe el producto en esa ubicacion", ubicacion)
                     
-
             elif "vender_producto" in nombre:
                 producto = nombre.replace("vender_producto ", "")
                 existeC = False
@@ -67,10 +65,10 @@ def instrucciones():
                 if c.nombre != producto or c.ubicacion != ubicacion:
                     print("Error, no existe el producto en esa ubicacion", ubicacion)
                 
-                '''if not existeC:
+                if not existeC:
                     print("Error, producto insuficiente ", cantidad)
                 if not existeU:
-                    print("Error, no existe el producto en esa ubicacin ", ubicacion)'''
+                    print("Error, no existe el producto en esa ubicacin ", ubicacion)
 
     for c in lista_producto:
         print(f"Nombre: {c.nombre}  Cantidad: {c.cantidad}  Ubicacion: {c.ubicacion}")   
