@@ -1,6 +1,12 @@
 #Importaciones
 import csv
 
+
+#Creando la lista
+lista_producto = []
+
+jump = "------------------------------------------------------"
+
 class Producto:
     def __init__(self, nombre, cantidad, precio, ubicacion):
         self.nombre = nombre
@@ -9,27 +15,29 @@ class Producto:
         self.ubicacion = ubicacion
         self.total = 0
 
-nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\Practica1\lista.inv"
-with open(nombre_archivo, "r") as archivo:
-    lector = csv.reader(archivo, delimiter=";")
-    #Creando la lista
-    lista_producto = []
-    for lista in lector:
-    #Extrayendo objetos del archivo
-        nombre = lista[0]
-        #Reemplazamos el nombre
-        producto = nombre.replace("crear_producto ", "")
-        cantidad = int(lista[1])
-        precio = float(lista[2])
-        ubicacion = lista[3]
-        nuevo_producto = Producto(producto, cantidad, precio, ubicacion)
-        lista_producto.append(nuevo_producto)
-        print(f"Producto; Nombre: {producto}  Cantidad: {cantidad}  Precio: {precio}  Ubicacion: {ubicacion}")
 
-#Probando la lista
-#for c in lista_producto:
-    #print(c.nombre)
-    #print(c.precio)
+def inventario():
+    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\Practica1\lista.inv"
+    with open(nombre_archivo, "r") as archivo:
+        lector = csv.reader(archivo, delimiter=";")
+        for lista in lector:
+        #Extrayendo objetos del archivo
+            nombre = lista[0]
+            producto = nombre.replace("crear_producto ", "") #Reemplazamos el nombre
+            cantidad = int(lista[1])
+            precio = float(lista[2])
+            ubicacion = lista[3]
+            #Agregando los atributos al objeto
+            nuevo_producto = Producto(producto, cantidad, precio, ubicacion)
+            #Agregamos el objeto a la lista
+            lista_producto.append(nuevo_producto)
+            print(f"Producto; Nombre: {producto}  Cantidad: {cantidad}  Precio: {precio}  Ubicacion: {ubicacion}")
+
+
+'''Probando la lista
+for c in lista_producto:
+    print(c.nombre)
+    print(c.precio)'''
 
 def instrucciones():
     nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\Practica1\Instrucciones.mov"
@@ -70,14 +78,103 @@ def instrucciones():
                             c.cantidad -= cantidad
                             c.total = c.precio * c.cantidad
                             print("restado", productov, ubicacion, c.precio, c.total)
-                        else:
+                        if cantidad > c.cantidad:
                             #Si la cantidad es mayor que
                             print("Error, producto insuficiente")
                 if not existeU:
                     print("Error, no existe el producto en esa ubicacion", productov, ubicacion)
 
+
     #Imprime la lista con sus atributos
     for c in lista_producto:
         print(f"Nombre: {c.nombre}  Cantidad: {c.cantidad}  Ubicacion: {c.ubicacion}")   
 
+def informe():
+    print("Información")
+    
+
+'''def menu():
+    print(jump)
+    print("Practica 1 - Lenguajes formales y de programacion 1")
+    print(jump)
+    print("Sistema de Inventario")
+    print()
+    print("1. Cargar Inventario inicial ")
+    print("2. Cargar Instrucciones de movimientos ")
+    print("3. Crear Informe de Inventario ")
+    print("4. Salir")
+    print()
+    entrada = input("Ingrese una opcion: ")
+    print()
+    print(jump)
+    if entrada == "4":
+        print("Adios, regresa pronto")
+        quit()
+    else:
+        while entrada != "4":
+            if entrada == "1":
+                print("Cargando inventario")
+                print()
+                entrada = ""
+                inventario()
+                menu2()
+            elif entrada == "2":
+                entrada = ""
+                instrucciones()
+                menu2()
+            elif entrada == "3":
+                entrada = ""
+                informe()
+                menu2()
+            else:
+                print("Seleccione una opcion correcta")
+                entrada = ""
+                menu2()
+
+
+def menu2():
+    print(jump)
+    print()
+    print("Sistema de Inventario")
+    print()
+    print("1. Cargar Inventario inicial ")
+    print("2. Cargar Instrucciones de movimientos ")
+    print("3. Crear Informe de Inventario ")
+    print("4. Salir")
+    print()
+    entrada = input("Ingrese una opcion: ")
+    print()
+    print(jump)
+    if entrada == "4":
+        print("Adios, regresa pronto")
+        quit()
+    else:
+        while entrada != "4":
+            if entrada == "1":
+                print("Cargando Inventario")
+                print()
+                entrada = ""
+                inventario()
+                menu2()
+            elif entrada == "2":
+                print("Cargando Instrucciones de movimientos")
+                print()
+                entrada = ""
+                instrucciones()
+                menu2()
+            elif entrada == "3":
+                print("Creando Informe de Inventario")
+                print()
+                entrada = ""
+                informe()
+                menu2()
+            else:
+                print("Seleccione una opcion correcta")
+                entrada = ""
+                menu()
+
+menu()'''
+
+
+inventario()
 instrucciones()
