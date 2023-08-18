@@ -7,6 +7,7 @@ lista_producto = []
 
 jump = "------------------------------------------------------"
 
+
 class Producto:
     def __init__(self, nombre, cantidad, precio, ubicacion):
         self.nombre = nombre
@@ -80,19 +81,21 @@ def instrucciones():
                 if not existeU:
                     print("Error, no existe el producto en esa ubicacion", productov, ubicacion)
 
-
     #Imprime la lista con sus atributos
     for c in lista_producto:
         print(f"Nombre: {c.nombre}  Cantidad: {c.cantidad}  Ubicacion: {c.ubicacion}")   
 
 def informe():
-    archivo = open('D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\Informe.txt','w', encoding="utf-8")
+    #Ruta donde se guardara mi archivo .txt
+    archivo = open('D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\Informe.txt','w', encoding="utf-8") #Utf-8 para las tildes
     archivo.write('Informe de Inventario: \n')
-    archivo.write(' \n')
+    archivo.write(' \n') #Salto de linea
     archivo.write('Producto    Cantidad    Precio Unitario    Valor Total    Ubicación \n')
     archivo.write('-------------------------------------------------------------------------- \n')
+    #Recorro mi lista para imprimir mis atributos
     for c in lista_producto:
         c.total = c.precio * c.cantidad
+        #Creando/Escribiendo mi archivo .txt
         archivo.write(f"{c.nombre}      {c.cantidad}          {c.precio}                {c.total}            {c.ubicacion} \n")
 
 def menu():
@@ -173,6 +176,6 @@ def menu2():
             else:
                 print("Seleccione una opcion correcta")
                 entrada = ""
-                menu()
+                menu2()
 
 menu()
