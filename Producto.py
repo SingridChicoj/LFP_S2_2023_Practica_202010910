@@ -17,7 +17,7 @@ class Producto:
 
 
 def inventario():
-    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\Practica1\lista.inv"
+    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\lista.inv"
     with open(nombre_archivo, "r") as archivo:
         lector = csv.reader(archivo, delimiter=";")
         for lista in lector:
@@ -34,13 +34,8 @@ def inventario():
             print(f"Producto; Nombre: {producto}  Cantidad: {cantidad}  Precio: {precio}  Ubicacion: {ubicacion}")
 
 
-'''Probando la lista
-for c in lista_producto:
-    print(c.nombre)
-    print(c.precio)'''
-
 def instrucciones():
-    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\Practica1\Instrucciones.mov"
+    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\Instrucciones.mov"
     with open(nombre_archivo, "r") as archivo:
         lector = csv.reader(archivo, delimiter = ";")
         #Accedemos a la lista de Instrucciones
@@ -90,10 +85,16 @@ def instrucciones():
         print(f"Nombre: {c.nombre}  Cantidad: {c.cantidad}  Ubicacion: {c.ubicacion}")   
 
 def informe():
-    print("Información")
+    archivo = open('D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\Informe.txt','w', encoding="utf-8")
+    archivo.write('Informe de Inventario: \n')
+    archivo.write(' \n')
+    archivo.write('Producto    Cantidad    Precio Unitario    Valor Total    Ubicación \n')
+    archivo.write('-------------------------------------------------------------------------- \n')
+    for c in lista_producto:
+        archivo.write(f"{c.nombre}      {c.cantidad}          {c.precio}                {c.total}            {c.ubicacion} \n")
     
 
-'''def menu():
+def menu():
     print(jump)
     print("Practica 1 - Lenguajes formales y de programacion 1")
     print(jump)
@@ -173,8 +174,4 @@ def menu2():
                 entrada = ""
                 menu()
 
-menu()'''
-
-
-inventario()
-instrucciones()
+menu()
