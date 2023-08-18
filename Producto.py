@@ -31,7 +31,8 @@ def inventario():
             nuevo_producto = Producto(producto, cantidad, precio, ubicacion)
             #Agregamos el objeto a la lista
             lista_producto.append(nuevo_producto)
-            print(f"Producto; Nombre: {producto}  Cantidad: {cantidad}  Precio: {precio}  Ubicacion: {ubicacion}")
+            total = precio * cantidad
+            print(f"Producto; Nombre: {producto}  Cantidad: {cantidad}  Precio: {precio}  Total: {total}   Ubicacion: {ubicacion}")
 
 
 def instrucciones():
@@ -91,8 +92,8 @@ def informe():
     archivo.write('Producto    Cantidad    Precio Unitario    Valor Total    Ubicación \n')
     archivo.write('-------------------------------------------------------------------------- \n')
     for c in lista_producto:
+        c.total = c.precio * c.cantidad
         archivo.write(f"{c.nombre}      {c.cantidad}          {c.precio}                {c.total}            {c.ubicacion} \n")
-    
 
 def menu():
     print(jump)
