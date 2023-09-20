@@ -18,14 +18,18 @@ class Producto:
 
 
 def inventario():
-    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\lista.inv"
+    #D:\Lenguajes1\Lenguajes 1.2\Lab\Practicas\LFP_S2_2023_Practica_202010910\Pruebas\inventario
+    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practicas\LFP_S2_2023_Practica_202010910\Pruebas\inventario.inv"
     with open(nombre_archivo, "r") as archivo:
         lector = csv.reader(archivo, delimiter=";")
         for lista in lector:
         #Extrayendo objetos del archivo
             nombre = lista[0]
             producto = nombre.replace("crear_producto ", "") #Reemplazamos el nombre
-            cantidad = int(lista[1])
+            try:
+                cantidad = int(lista[1])
+            except ValueError:
+                print("Error, cantidad invalida")
             precio = float(lista[2])
             ubicacion = lista[3]
             #Agregando los atributos al objeto
@@ -37,13 +41,14 @@ def inventario():
 
 
 def instrucciones():
-    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\Instrucciones.mov"
+    #D:\Lenguajes1\Lenguajes 1.2\Lab\Practicas\LFP_S2_2023_Practica_202010910\Pruebas\movimientos
+    nombre_archivo = "D:\Lenguajes1\Lenguajes 1.2\Lab\Practicas\LFP_S2_2023_Practica_202010910\Pruebas\movimientos.mov"
     with open(nombre_archivo, "r") as archivo:
         lector = csv.reader(archivo, delimiter = ";")
         #Accedemos a la lista de Instrucciones
         for lista in lector:
             nombre = lista[0]
-            cantidad = int(lista[1])
+            cantidad = float(lista[1])
             ubicacion = lista[2]
             #Si es agregar stock en la primera posicion se ejecutara
             if "agregar_stock" in nombre:
@@ -87,7 +92,7 @@ def instrucciones():
 
 def informe():
     #Ruta donde se guardara mi archivo .txt
-    archivo = open('D:\Lenguajes1\Lenguajes 1.2\Lab\Practica\LFP_S2_2023_Practica_202010910\Informe.txt','w', encoding="utf-8") #Utf-8 para las tildes
+    archivo = open('Informe.txt','w', encoding="utf-8") #Utf-8 para las tildes
     archivo.write('Informe de Inventario: \n')
     archivo.write(' \n') #Salto de linea
     archivo.write('Producto    Cantidad    Precio Unitario    Valor Total    Ubicación \n')

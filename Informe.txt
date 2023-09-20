@@ -1,0 +1,55 @@
+Informe de Inventario: 
+ 
+Producto    Cantidad    Precio Unitario    Valor Total    Ubicación 
+-------------------------------------------------------------------------- 
+Uvas      260.0          2.75                715.0            BodegaX 
+Mangos      30          2.0                60.0            BodegaX 
+Fresas      90          4.5                405.0            BodegaX 
+Peras      75          3.25                243.75            BodegaY 
+Manzanas      120          1.5                180.0            BodegaY 
+PlÃ¡tanos      50          2.25                112.5            BodegaY 
+Naranjas      100          2.0                200.0            BodegaZ 
+Naranjas      100          2.0                200.0            BodegaZ 
+Fresas      150.39999999999998          3.75                563.9999999999999            BodegaZ 
+Melones      25          5.5                137.5            BodegaZ 
+SandÃ­as      90.0          4.0                360.0            BodegaA 
+Papayas      15          6.75                101.25            BodegaA 
+Duraznos      85          2.9                246.5            BodegaA 
+Cerezas      55          4.25                233.75            BodegaB 
+Limones      65          2.15                139.75            BodegaB 
+Moras      40          3.8                152.0            BodegaB 
+Uvas      200          2.75                550.0            BodegaC 
+Mangos      30          2.0                60.0            BodegaC 
+Fresas      90          4.5                405.0            BodegaC 
+Peras      75          3.25                243.75            BodegaD 
+Manzanas      120          1.5                180.0            BodegaD 
+PlÃ¡tanos      50          2.25                112.5            BodegaD 
+Naranjas      100          2.0                200.0            BodegaE 
+Kiwis      102.0          3.75                382.5            BodegaE 
+Melones      25          5.5                137.5            BodegaE 
+SandÃ­as      70          4.0                280.0            BodegaF 
+Papayas      15          6.75                101.25            BodegaF 
+Duraznos      85          2.9                246.5            BodegaF 
+Cerezas      55          4.25                233.75            BodegaG 
+Limones      65          2.15                139.75            BodegaG 
+Moras      40          3.8                152.0            BodegaG 
+Kiwis      40          3.75                150.0            BodegaG 
+Mangos      33.0          2.5                82.5            BodegaH 
+Uvas      200.0          3.0                600.0            BodegaH 
+Peras      80.0          2.75                220.0            BodegaH 
+Manzanas      120.0          1.25                150.0            BodegaI 
+PlÃ¡tanos      50.0          2.0                100.0            BodegaI 
+Naranjas      120.0          1.75                210.0            BodegaI 
+Fresas      170.0          4.75                807.5            BodegaJ 
+Kiwis      40.0          3.5                140.0            BodegaJ 
+Duraznos      100.0          3.15                315.0            BodegaJ 
+Cerezas      65.0          4.5                292.5            BodegaK 
+Limones      135.0          2.0                270.0            BodegaK 
+SandÃ­as      85.0          3.75                318.75            BodegaK 
+Papayas      28.0          6.5                182.0            BodegaL 
+Mangos      55.0          2.25                123.75            BodegaL 
+Uvas      250.0          3.25                812.5            BodegaL 
+Peras      130.0          3.5                455.0            BodegaM 
+Manzanas      190.0          1.75                332.5            BodegaM 
+PlÃ¡tanos      80.0          2.5                200.0            BodegaM 
+Calificacion      145.0          1.5                217.5            BodegaN 
